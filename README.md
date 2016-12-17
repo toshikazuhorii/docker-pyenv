@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/version/vadviktor/python.svg)](https://microbadger.com/images/vadviktor/python "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/vadviktor/python.svg)](https://microbadger.com/images/vadviktor/python "Get your own image badge on microbadger.com")
+
 Ubuntu LTS Trusty (14.04) based image with [pyenv](https://github.com/yyuu/pyenv).
 
 # Build examples
