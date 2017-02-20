@@ -1,9 +1,9 @@
-FROM ubuntu:trusty
+FROM blitznote/debootstrap-amd64:16.04
 MAINTAINER vad.viktor@gmail.com
 
 # use pyenv understandable version
 ARG PYTHON_VERSION
-ENV PYTHON_VERSION=${PYTHON_VERSION:-2.7.12}
+ENV PYTHON_VERSION=${PYTHON_VERSION:-3.6.0}
 
 COPY scripts/package-setup.sh /
 RUN /package-setup.sh
