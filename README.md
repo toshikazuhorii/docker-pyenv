@@ -1,6 +1,4 @@
-[![](https://images.microbadger.com/badges/version/vadviktor/python.svg)](https://microbadger.com/images/vadviktor/python "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/vadviktor/python.svg)](https://microbadger.com/images/vadviktor/python "Get your own image badge on microbadger.com")
-
-Ubuntu LTS Xenial (16.04) [minimal debootstrap](https://hub.docker.com/r/blitznote/debootstrap-amd64/) based image with [pyenv](https://github.com/yyuu/pyenv).
+Ubuntu LTS Xenial (16.04) based image with [pyenv](https://github.com/yyuu/pyenv).
 
 # Build examples
 
@@ -30,6 +28,8 @@ ENTRYPOINT ["/app/startup.sh"]
 
 `startup.sh` example:
 
+Setting the PATH and initializing rbenv is mandatory. Running code with [`exec`](http://wiki.bash-hackers.org/commands/builtin/exec) is a must have.
+
 ```
 #!/bin/bash
 
@@ -43,8 +43,4 @@ exec somecommandthatisinpython
 
 In this example we are running a minitest suite.
 
-`docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp vadviktor/python:3.6.0 sh /init.sh && python my_cool_script.py`
-
-# TODO
-
-* Ability to install other Python implementations
+`docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp vadviktor/python:3.6.0 bash /init.sh && python my_cool_script.py`
